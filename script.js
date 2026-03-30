@@ -1,3 +1,9 @@
+let score = 0;
+let streak = 0;
+let highscore = localStorage.getItem("highscore") || 0;
+
+document.getElementById("highscore").textContent = highscore;
+
 const themes = [
   "style.css",          // default dark
   "style-neon.css",     // neon
