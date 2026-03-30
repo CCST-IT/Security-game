@@ -1,3 +1,20 @@
+let filteredAcronyms = [...ACRONYMS];
+
+document.getElementById("start-btn").addEventListener("click", () => {
+  const checks = [...document.querySelectorAll("#topic-options input:checked")].map(c => c.value);
+
+  if (checks.includes("all") || checks.length === 0) {
+    filteredAcronyms = [...ACRONYMS];
+  } else {
+    filteredAcronyms = ACRONYMS.filter(a => checks.includes(a.topic));
+  }
+
+  document.getElementById("start-screen").style.display = "none";
+  document.getElementById("game-container").style.display = "block";
+
+  pickRandom();
+});
+
 let score = 0;
 let streak = 0;
 let highscore = localStorage.getItem("highscore") || 0;
