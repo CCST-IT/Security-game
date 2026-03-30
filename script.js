@@ -12,8 +12,13 @@ document.getElementById("start-btn").addEventListener("click", () => {
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-container").style.display = "block";
 
-  pickRandom();
-});
+function pickRandom() {
+  current = filteredAcronyms[Math.floor(Math.random() * filteredAcronyms.length)];
+  document.getElementById("acronym-display").textContent = current.acronym;
+  document.getElementById("user-input").value = "";
+  document.getElementById("result").textContent = "";
+}
+
 
 let score = 0;
 let streak = 0;
