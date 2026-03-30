@@ -144,5 +144,25 @@ button:hover {
 #scoreboard p {
   margin: 4px 0;
 }
+#start-screen {
+  text-align: center;
+  padding: 30px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+#topic-options {
+  text-align: left;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+#start-btn {
+  margin-top: 20px;
+}
 
 
