@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security+ Acronym Trainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #38bdf8;
+      text-align: center;
+    }
+
+    #game-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000055;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      background: #374151;
+      color: #e5e7eb;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #22c55e;
+      color: #022c22;
+      font-size: 15px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Security+ Acronym Trainer</h1>
+
+  <div id="game-container">
+    <p id="acronym-display">Loading...</p>
+
+    <input id="user-input" placeholder="Type the full expansion..." />
+
+    <button onclick="checkAnswer()">Submit</button>
+
+    <div id="result"></div>
+  </div>
+
+  <!-- Load your acronym dataset -->
+  <script src="acronyms.js"></script>
+
+  <!-- Your game logic -->
+  <script>
+    let current;
+
+    function pickRandom() {
+      current = ACRONYMS[Math.floor(Math.random() * ACRONYMS.length)];
+      document.getElementById("acronym-display").textContent = current.acronym;
+      document.getElementById("user-input").value = "";
+      document.getElementById("result").textContent = "";
+    }
+
+    function checkAnswer() {
+      const user = document.getElementById("user-input").value.trim().toLowerCase();
+      const correct = current.expansion.join(" ").toLowerCase();
+
+      if (user === correct) {
+        document.getElementById("result").textContent = "Correct!";
+        document.getElementById("result").style.color = "#22c55e";
+      } else {
+        document.getElementById("result").textContent = "Incorrect — " + correct;
+        document.getElementById("result").style.color = "#ef4444";
+      }
+
+      setTimeout(pickRandom, 1500);
+    }
+
+    // Start game
+    pickRandom();
+  </script>
+
+</body>
+</html>
 
