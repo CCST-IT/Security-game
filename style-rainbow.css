@@ -1,1 +1,76 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #ff0080, #ff8c00, #ffee00, #00ff6a, #00c3ff, #7a00ff);
+  background-size: 400% 400%;
+  animation: rainbowBG 12s ease infinite;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+@keyframes rainbowBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000aa;
+}
+
+#game-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #00000088;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #000000aa;
+  backdrop-filter: blur(6px);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #ffffffcc;
+  color: #000;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #ffee00, #00ff6a, #00c3ff, #7a00ff);
+  background-size: 300% 300%;
+  animation: rainbowButton 4s ease infinite;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+@keyframes rainbowButton {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+button:hover {
+  filter: brightness(1.2);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 8px #000000aa;
+}
 
